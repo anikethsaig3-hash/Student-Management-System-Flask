@@ -1,0 +1,10 @@
+{
+  "languages": [
+    {"name": "Python", "percent": 53.7},
+    {"name": "HTML", "percent": 43.5},
+    {"name": "JavaScript", "percent": 2.4},
+    {"name": "CSS", "percent": 0.4}
+  ],
+  "source": "user-provided",
+  "measured_at": "2026-07-22"
+}
