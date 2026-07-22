@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}View Student{% endblock %}
+
+{% block content %}
+  <h1>{{ student.name }}</h1>
+  <ul class="list-group mb-3">
+    <li class="list-group-item"><strong>Email:</strong> {{ student.email }}</li>
+    <li class="list-group-item"><strong>Course:</strong> {{ student.course or '-' }}</li>
+    <li class="list-group-item"><strong>Year:</strong> {{ student.year or '-' }}</li>
+  </ul>
+  <a href="{{ url_for('edit', student_id=student.id) }}" class="btn btn-primary">Edit</a>
+  <a href="{{ url_for('index') }}" class="btn btn-link">Back</a>
+{% endblock %}
