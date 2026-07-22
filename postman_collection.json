@@ -1,0 +1,132 @@
+{
+  "info": {
+    "name": "Student Management API",
+    "description": "Postman collection for Student Management System REST API (CRUD for students). Update the base_url variable to point at your server (default is http://127.0.0.1:5000/api).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:5000/api",
+      "type": "string"
+    },
+    {
+      "key": "student_id_example",
+      "value": "1",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "List Students",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/students",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "students"
+          ]
+        },
+        "description": "Retrieve a list of all students."
+      },
+      "response": []
+    },
+    {
+      "name": "Get Student by ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/students/{{student_id_example}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "students",
+            "{{student_id_example}}"
+          ]
+        },
+        "description": "Get a single student by database ID. Replace {{student_id_example}} with the student's numeric id."
+      },
+      "response": []
+    },
+    {
+      "name": "Create Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"student_id\": \"S100\",\n  \"name\": \"Eve Adams\",\n  \"email\": \"eve.adams@example.com\",\n  \"age\": 19,\n  \"marks\": [88, 91, 76]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/students",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "students"
+          ]
+        },
+        "description": "Create a new student. Required fields: student_id, name, email. Marks are optional and will be used to compute average and grade."
+      },
+      "response": []
+    },
+    {
+      "name": "Update Student (PUT)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Eve A. Adams\",\n  \"age\": 20,\n  \"marks\": [95, 92]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/students/{{student_id_example}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "students",
+            "{{student_id_example}}"
+          ]
+        },
+        "description": "Partial or full update of a student. Provide only the fields you want to change."
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Student",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/students/{{student_id_example}}",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "students",
+            "{{student_id_example}}"
+          ]
+        },
+        "description": "Delete a student by id. Response 204 No Content on success."
+      },
+      "response": []
+    }
+  ]
+}
