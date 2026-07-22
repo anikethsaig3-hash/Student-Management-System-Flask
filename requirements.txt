@@ -1,0 +1,6 @@
+Flask
+Flask-SQLAlchemy
+SQLAlchemy
+
+# Optional (uncomment if you prefer using Flask-WTF):
+# Flask-WTF

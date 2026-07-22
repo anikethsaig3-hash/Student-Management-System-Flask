@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}404 Not Found{% endblock %}
+
+{% block content %}
+  <div class="text-center">
+    <h1 class="display-4">404</h1>
+    <p class="lead">The page you were looking for was not found.</p>
+    <a href="{{ url_for('list_students') }}" class="btn btn-primary">Home</a>
+  </div>
+{% endblock %}

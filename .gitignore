@@ -1,0 +1,7 @@
+# Byte-compiled / virtual env
+__pycache__/
+venv/
+.env
+
+# SQLite database
+*.db
