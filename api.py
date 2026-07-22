@@ -1,7 +1,10 @@
 import re
 from flask import Blueprint, request, jsonify, url_for, current_app
 from sqlalchemy.exc import IntegrityError
-from models import db, Student
+
+# Import db and Student from package app to ensure we use the same SQLAlchemy instance
+from app import db
+from app.models import Student
 
 api_bp = Blueprint("api", __name__)
 
